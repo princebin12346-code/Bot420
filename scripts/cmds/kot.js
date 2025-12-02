@@ -1,43 +1,40 @@
 module.exports = {
-  config: {
-    name: "mentionreply",
-    version: "1.0",
-    author: "SaGor",
-    countDown: 3,
-    role: 0,
-    shortDescription: {
-      en: "Reply when a specific ID is mentioned"
+    config: {
+        name: "mentionreply",
+        version: "1.0",
+        author: "ChatGPT",
+        role: 0,
+        shortDescription: "Reply when specific IDs are mentioned",
+        longDescription: "Bot will reply with custom messages when specific user IDs are mentioned.",
+        category: "system",
     },
-    description: {
-      en: "Bot will reply with a custom message when a specific user ID is mentioned"
-    },
-    category: "utility",
-    guide: {
-      en: "{pn} (auto reply on specific ID mention)"
+
+    onChat: async function ({ event, message }) {
+
+        // ========================
+        //  এখানে আপনার আইডি + মেসেজ বসান
+        // ========================
+        const mentionList = {
+            "61574843383066": "মুক্তা ম্যাম সুদু আমার কেউ নজর দিবিনা👿",
+            "100012496633250": "এই ভাইকে ডেকেছেন? উনি খুব ব্যস্ত!",
+            "100000000000003": "উনি এখন অনলাইনে নেই মনে হচ্ছে।",
+            "100000000000004": "এইজনকে প্রায়ই সবাই খোঁজে!",
+            "100000000000005": "আপনি যে আইডি মেনশন করেছেন তিনি VIP!",
+            "100000000000006": "ওনার সাথে কথা বলার আগে ইনবক্স করেন!",
+            "100000000000007": "উনি গ্রুপের খুব পুরাতন মেম্বার!",
+            "100000000000008": "ওনাকে ডাকলে তিনি দ্রুত রিপ্লাই দেন।",
+            "100000000000009": "এই আইডি দেখে অনেকে ভয় পায়!",
+            "100000000000010": "এইজনকে ডাকলে রাগ করতে পারে 🤭"
+        };
+
+        // event.mentions এর ভিতর মেনশন হওয়া আইডিগুলো থাকে
+        const mentionedIDs = Object.keys(event.mentions || {});
+        if (mentionedIDs.length === 0) return;
+
+        for (let id of mentionedIDs) {
+            if (mentionList[id]) {
+                return message.reply(mentionList[id]);
+            }
+        }
     }
-  },
-
-  onStart: async function ({ message }) {
-    return message.reply("Mention reply system activated!");
-  },
-
-  onChat: async function ({ message, event }) {
-
-    // 🐐 এখানে আপনি আপনার TARGET IDS সেট করবেন
-    const targetList = {
-      "61574843383066": "মুক্তা ম্যাম সুদু আমার কেউ নজর দিবিনা👿",
-      "100078333286870": "ম্যাম সাথী এখন ব্যাস্ত আছে গ্রুপে আসলে আপনার সাথে কথা বলবো",
-      "100012496633250": "ভাই এখন ব্যস্ত আছে"
-    };
-
-    // message তে mention আছে কিনা দেখুন
-    if (!event.mentions || Object.keys(event.mentions).length === 0) return;
-
-    // প্রতিটি mention চেক
-    for (const uid of Object.keys(event.mentions)) {
-      if (targetList[uid]) {
-        return message.reply(targetList[uid]);  
-      }
-    }
-  }
 };
