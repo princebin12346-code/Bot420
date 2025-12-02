@@ -30,12 +30,11 @@ function extractEditPrompt(rawArgs, imageUrl) {
     return prompt || "enhance quality";
 }
 
-
 module.exports = {
   config: {
     name: "edit",
     aliases: ["imgedit", "nanoedit"],
-    version: "2.3",
+    version: "2.4",
     author: "NeoKEX",
     countDown: 15,
     role: 0,
@@ -47,7 +46,13 @@ module.exports = {
   },
 
   onStart: async function({ message, args, event }) {
-    
+
+    // 🔐 BOT ADMIN CHECK (Only bot admins can use this command)
+    const botAdmins = global.config.ADMINBOT || [];
+    if (!botAdmins.includes(event.senderID)) {
+      return message.reply("❌ এই কমান্ডটি শুধুমাত্র বট এডমিন ব্যবহার করতে পারবেন!");
+    }
+
     const imageUrl = extractImageUrl(message, args, event);
     const editPrompt = extractEditPrompt(args, imageUrl);
 
