@@ -60,7 +60,7 @@
     "secure": true,
     "httpOnly": false,
     "sameSite": "lax",
-    "expirationDate": 1770392398,
+    "expirationDate": 1770637236,
     "storeId": "0",
     "session": false
   },
@@ -73,7 +73,7 @@
     "secure": true,
     "httpOnly": true,
     "sameSite": "no_restriction",
-    "expirationDate": 1799767354.115687,
+    "expirationDate": 1800013237.793075,
     "storeId": "0",
     "session": false
   },
@@ -86,7 +86,7 @@
     "secure": true,
     "httpOnly": true,
     "sameSite": "lax",
-    "expirationDate": 1799768397.838071,
+    "expirationDate": 1800013231.682059,
     "storeId": "0",
     "session": false
   },
@@ -131,40 +131,40 @@
   },
   {
     "name": "fr",
-    "value": "1Ekb9IE4nsY5xcokS.AWevAFnK92N5xN0X_Snz9LCsAvs2BTuLXXOHWRF2t2qvdn43qI8.BpIp_g..AAA.0.0.BpNvFN.AWchjyKiJhvv8mrEkwC7IdV0EIo",
+    "value": "1Ekb9IE4nsY5xcokS.AWeA-UOWNrEgIp17KTMem5fQDseIbg6gzaG-cTENYHapNk_fUOA.BpIp_g..AAA.0.0.BpOZQy.AWdCc46N9ZNNRhD6xOUYVnOgL7s",
     "domain": ".facebook.com",
     "path": "/",
     "hostOnly": false,
     "secure": true,
     "httpOnly": true,
     "sameSite": "no_restriction",
-    "expirationDate": 1772984397.837583,
+    "expirationDate": 1773157171.280879,
     "storeId": "0",
     "session": false
   },
   {
     "name": "fbl_st",
-    "value": "100429651%3BT%3A29420139",
+    "value": "100434923%3BT%3A29424220",
     "domain": ".facebook.com",
     "path": "/",
     "hostOnly": false,
     "secure": true,
     "httpOnly": false,
     "sameSite": "strict",
-    "expirationDate": 1796744398,
+    "expirationDate": 1796989236,
     "storeId": "0",
     "session": false
   },
   {
     "name": "wl_cbv",
-    "value": "v2%3Bclient_version%3A3009%3Btimestamp%3A1765208397",
+    "value": "v2%3Bclient_version%3A3013%3Btimestamp%3A1765453231",
     "domain": ".facebook.com",
     "path": "/",
     "hostOnly": false,
     "secure": true,
     "httpOnly": false,
     "sameSite": "no_restriction",
-    "expirationDate": 1772984398,
+    "expirationDate": 1773229235,
     "storeId": "0",
     "session": false
   }
