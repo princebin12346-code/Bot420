@@ -169,9 +169,10 @@ module.exports = {
     };
 
     try {
-      const simpleTriggers = ["Assalamu alaikum", "ASSALAMU ALAIKUM", "আসসালামু আলাইকুম", "সালাম", "Salam", "SALAM", "ASSALAMU ALAIKUM"]   if (simpleTriggers.includes(raw)) {
+      const simpleTriggers = ["Assalamu alaikum", "ASSALAMU ALAIKUM", "আসসালামু আলাইকুম", "আসসালামু আলাইকুম 🥰", "সালাম", "Salam", "SALAM", "alaikum"];
+      if (simpleTriggers.includes(raw)) {
         await sendTyping();
-        const replies = ["ওয়ালাইকুম আসসালাম 🫡", "ওয়ালাইকুম আসসালাম 😻", "walaikum Assalam 💗", "walaikum Assalam"];
+        const replies = [" walaikum Assalam 🥰" , "ওয়ালাইকুম আসসালাম 🥰"];
         const reply = replies[Math.floor(Math.random() * replies.length)];
         return message.reply(reply, (err, info) => {
           if (!err) global.GoatBot.onReply.set(info.messageID, { commandName: "baby", author: senderID });
