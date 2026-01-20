@@ -164,7 +164,7 @@ module.exports.onChat = async ({
 }) => {
     try {
         const body = event.body ? event.body?.toLowerCase() : ""
-        if (body.startsWith("baby") || body.startsWith("bby") || body.startsWith("Baby") || body.startsWith("বেবি") || body.startsWith("Beby") || body.startsWith("@শুধু তোমার")) {
+        if (body.startsWith("baby") || body.startsWith("bby") || body.startsWith("Baby") || body.startsWith("বেবি") || body.startsWith("Beby") || body.startsWith("@Ritu Adhikari")) {
             const arr = body.replace(/^\S+\s*/, "")
             const randomReplies = ["Achi jan bolo😇", "এইতো আমি আছি🥰", "Bolo achi🙈🍒", "Bolo go achi ami 😘🍒"];
             if (!arr) {
